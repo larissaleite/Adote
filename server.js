@@ -33,11 +33,14 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(bodyParser.json());
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 require('./config/passport')(passport); // pass passport for configuration
 
-var router = express.Router();
+//var router = express.Router();
 
-router.get('/', function(req, res) {
+app.get('/', function(req, res) {
     // Use res.sendfile, as it streams instead of reading the file into memory.
     res.sendfile('./public/index.html');
 });
@@ -46,26 +49,27 @@ router.get('/', function(req, res) {
 	// FACEBOOK ROUTES =====================
 	// =====================================
 	// route for facebook authentication and login
-	router.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+	app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
 	// handle the callback after facebook has authenticated the user
-	router.get('/auth/facebook/callback',
+	app.get('/auth/facebook/callback',
 		passport.authenticate('facebook', {
 			successRedirect : '/home',
 			failureRedirect : '/'
 		}));
 
 	// route for logging out
-	router.get('/logout', function(req, res) {
+	app.get('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');
 	});
 
-	router.get('/home', function(req, res) {
-		res.render('./public/home.html', {
+  app.get('/home', function(req, res) {
+    console.log("home");
+    res.sendfile('public/home.html', {
 			user : req.user // get the user out of session and pass to template
 		});
-	});
+  });
 
 app.listen(port, function() {
   console.log('Express server listening on port ' + port);
