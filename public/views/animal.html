@@ -1,0 +1,246 @@
+<html>
+<head>
+  <title>Animal</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <style>
+    body 		{ font-family: 'Lato', sans-serif; height:100%; }
+
+    .container {
+      margin-top:3%;
+      padding-top: 4%;
+      box-shadow: 3px 7px 5px 0px rgba(0,0,0,0.25), -3px 7px 5px 0px rgba(0,0,0,0.25);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Lato', sans-serif;
+    }
+
+    .navbar-default {
+      background-color: #FFCCA4;
+      color: #FF800B;
+      border-bottom:3px solid #FF800B; 
+    }
+
+    .navbar-default .navbar-brand {
+      color: #FF800B;
+      font-family: 'Lobster', cursive;
+      font-size: 25px;
+    }
+
+    .navbar-brand > img {
+      width: 5%;
+      margin-right: 2%;
+    }
+
+    .navbar-default .navbar-nav>li>a {
+      color: #FF800B;
+    }
+
+    .thumbnail {
+      
+    }
+
+    .col-md-3, .col-md-6 {
+        /*border-right: 1px solid #cfcfcf;*/
+    }
+
+    .col-md-6 {
+      height: 100%;
+    }
+
+    .timeline {
+      /*padding: 2%;
+      border: 1px solid #ddd;
+      border-radius: 7px;
+      height: 95%;*/
+    }
+
+    .participants {
+      padding-left:5%;
+    }
+
+    .participants > .row {
+      margin-top:7%;
+    }
+
+    .participant {
+      width:90%;
+    }
+
+    .animal-localization > p > img {
+      width: 10%;
+    }
+
+    .animal-profile-picture > img {
+      width: 70%;
+    }
+
+    .timeline-event > .img-circle {
+      width:10%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="http://www.clker.com/cliparts/B/c/Y/B/n/Z/orange-paw-print-md.png" />Adote</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nome do usuário <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="row">
+      <!-- Animal pictures -->
+      <div class="col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvpzklquo6tl4Uy1aaFe1xkVPpG6YJ0caHwhGsxvyxNXIWGeAAgg" alt="...">
+            <div class="caption">
+              <h3>Bicho</h3>
+              <div class="animal-situacao">
+                <p>Situação atual: Em recuperação</p>
+              </div>
+              <div class="animal-descricao">
+                <p> Descrição opcional sobre o animal </p>
+              </div>
+              <div class="animal-localization">
+                <p><img src="http://www.clipartbest.com/cliparts/dTr/ena/dTrenagpc.png" />Onde estou</p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3969.1194777053934!2d-35.203243!3d-5.838779!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2ff8b8d7cad35%3A0x6963e8bee25a0372!2sUniversidade+Federal+do+Rio+Grande+do+Norte!5e0!3m2!1spt-BR!2s!4v1408767901606" width="235" height="100" frameborder="0" style="border:0"></iframe>
+              </div>
+              <br>
+              <a href="#"><span class="glyphicon glyphicon-plus"></span> Mais fotos</a>
+            </div>
+          </div>
+      </div>
+
+      <!-- Animal info and timeline -->
+      <div class="col-xs-6 col-md-6">
+        <div class="timeline">
+          <h3>Timeline</h3>
+
+          <hr>
+
+          <div class="timeline-event timeline-event-left">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/4/49/Gnome-Wikipedia-user-female.png" class="img-circle pull-left">
+            <p>Texto falando sobre o evento realizado pelo o usuário njcnajkdnajkndan snfnafkjnja doiajpodkap dnainjancan danidaidnai damxlmcklduehiw daijdiajdiajdoam</p>
+            <div style="clear:both"></div>
+          </div>
+
+          <hr>
+
+          <div class="timeline-event timeline-event-right">
+            <img src="http://www.fancyicons.com/download/?id=1878&t=png&s=256" class="img-circle pull-right">
+            <p>Texto falando sobre o evento realizado pelo o usuário njcnajkdnajkndan snfnafkjnja doiajpodkap dnainjancan danidaidnai damxlmcklduehiw daijdiajdiajdoam</p>
+            <div style="clear:both"></div>
+          </div>
+
+          <hr>
+
+          <div class="timeline-event timeline-event-left">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/4/49/Gnome-Wikipedia-user-female.png" class="img-circle pull-left">
+            <p>Texto falando sobre o evento realizado pelo o usuário njcnajkdnajkndan snfnafkjnja doiajpodkap dnainjancan danidaidnai damxlmcklduehiw daijdiajdiajdoam</p>
+            <div style="clear:both"></div>
+          </div>
+
+          <hr>
+
+          <div class="timeline-event timeline-event-right">
+            <img src="http://www.fancyicons.com/download/?id=1878&t=png&s=256" class="img-circle pull-right">
+            <p>Texto falando sobre o evento realizado pelo o usuário njcnajkdnajkndan snfnafkjnja doiajpodkap dnainjancan danidaidnai damxlmcklduehiw daijdiajdiajdoam</p>
+            <div style="clear:both"></div>
+          </div>
+
+          <hr>
+
+          <div class="timeline-event timeline-event-left">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/4/49/Gnome-Wikipedia-user-female.png" class="img-circle pull-left">
+            <p>Texto falando sobre o evento realizado pelo o usuário njcnajkdnajkndan snfnafkjnja doiajpodkap dnainjancan danidaidnai damxlmcklduehiw daijdiajdiajdoam</p>
+            <div style="clear:both"></div>
+          </div>
+
+          <hr>
+
+          <div class="timeline-event timeline-event-right">
+            <img src="http://www.fancyicons.com/download/?id=1878&t=png&s=256" class="img-circle pull-right">
+            <p>Texto falando sobre o evento realizado pelo o usuário njcnajkdnajkndan snfnafkjnja doiajpodkap dnainjancan danidaidnai damxlmcklduehiw daijdiajdiajdoam</p>
+            <div style="clear:both"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Participants -->
+      <div class="col-xs-6 col-md-3 participants">
+        <h4>Usuários participantes</h4>
+        <div class="row">
+          <div class="col-xs-6 col-sm-3">
+            <img src="http://files.softicons.com/download/internet-icons/user-icons-by-2shi/png/256/user5.png" class="img-circle participant">
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <img src="http://b.dryicons.com/images/icon_sets/shine_icon_set/png/256x256/female_business_user.png" class="img-circle participant">
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <img src="http://www.fancyicons.com/download/?id=1878&t=png&s=256" class="img-circle participant">
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <img src="http://www.selcuk.edu.tr/dosyalar/images/070/bayan%20icon.png" class="img-circle participant">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6 col-sm-3">
+            <img src="http://www.fancyicons.com/download/?id=1878&t=png&s=256" class="img-circle participant">
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <img src="http://www.selcuk.edu.tr/dosyalar/images/070/bayan%20icon.png" class="img-circle participant">
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <img src="http://www.fancyicons.com/download/?id=1878&t=png&s=256" class="img-circle participant">
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <img src="http://b.dryicons.com/images/icon_sets/shine_icon_set/png/256x256/female_business_user.png" class="img-circle participant">
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+</body>
+</html>

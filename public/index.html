@@ -1,15 +1,140 @@
 <html>
 <head>
-	<title>Node Authentication</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+	<title>Adote</title>
+
 	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
 	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-resource.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-cookies.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
+
+  <script src="js/app.js"></script>
+	<script src="js/controllers/home.js"></script>
+  <script src="js/controllers/animal.js"></script>
+  <script src="js/controllers/login.js"></script>
+  <script src="js/controllers/signup.js"></script>
+	<script src="js/controllers/registration.js"></script>
+
 	<style>
-		body 		{ padding-top:80px; }
+		body {
+			padding-top:7%;
+			background-color:#E1E8FF;
+			font-family: 'Lato', sans-serif;
+		}
+
+		h1, h2, h3, h4, nav {
+			font-family: 'Lato', sans-serif;
+		}
+
+		.navbar-default .navbar-brand {
+			color: #00467F;
+			font-family: 'Lobster', cursive;
+			font-size:25px;
+		}
+
+		.navbar-default {
+			border-bottom:3px solid #00467F;
+		}
+
+		.navbar-default .navbar-nav>li>a {
+			color: #00467F;
+		}
+
+		.col-md-3, .col-md-6 {
+				/*border-right: 1px solid #cfcfcf;*/
+		}
+
+		.participants {
+			padding-left:5%;
+		}
+
+		.participants > .row {
+			margin-top:7%;
+		}
+
+		.participant {
+			width:90%;
+		}
+
+		.animal-localization > p > img {
+			width: 10%;
+		}
+
+		.animal-profile-picture > img {
+			width: 70%;
+		}
+
+		.timeline {
+			height: 60%;
+			overflow: scroll; overflow-x:hidden;
+			margin-bottom:10%;
+		}
+
+		.timeline-event > .img-circle {
+			width:10%;
+		}
+
 	</style>
 </head>
-<body>
-<div class="container">
+<body ng-app="adote">
+	<div class="container">
 
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Adote</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Link</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Nome do usuário <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+						</li>
+						</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+		<div class="row">
+
+			<div ng-view></div>
+
+		</div>
+<!--
 	<div class="jumbotron text-center">
 		<h1><span class="fa fa-lock"></span> Node Authentication</h1>
 
@@ -18,7 +143,7 @@
 		<a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
 
 	</div>
-
+-->
 </div>
 </body>
 </html>
