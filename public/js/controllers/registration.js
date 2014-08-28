@@ -1,4 +1,4 @@
 angular.module('adote')
-  .controller('RegistrationCtrl', ['$scope', function($scope) {
+  .controller('CadastroCtrl', ['$scope', function($scope) {
 
 }]);

@@ -15,9 +15,9 @@ angular.module('adote', ['ngCookies', 'ngResource', 'ngRoute'])
         templateUrl: 'views/animal2.html',
         controller: 'AnimalCtrl'
       })
-      .when('/register', {
-        templateUrl: 'views/register.html',
-        controller: 'RegistrationCtrl'
+      .when('/cadastro', {
+        templateUrl: 'views/cadastro.html',
+        controller: 'CadastroCtrl'
       })
   	  .otherwise({
   	    redirectTo: '/'
