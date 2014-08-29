@@ -17,6 +17,8 @@
 	<!-- Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -28,79 +30,40 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
 
   <script src="js/app.js"></script>
-	<script src="js/controllers/home.js"></script>
+  <script src="js/controllers/home.js"></script>
   <script src="js/controllers/animal.js"></script>
   <script src="js/controllers/login.js"></script>
   <script src="js/controllers/signup.js"></script>
-	<script src="js/controllers/registration.js"></script>
+  <script src="js/controllers/registration.js"></script>
 
 	<style>
 
-		body {
-			padding-top:7%;
-			background-color:#E1E8FF;
-			font-family: 'Lato', sans-serif;
-		}
+	body {
+      padding-top:7%;
+      /*background-color:#E1E8FF;*/
+      background-color: #abc6d9;
 
-		h1, h2, h3, h4, nav {
-			font-family: 'Lato', sans-serif;
-		}
+      font-family: 'Lato', sans-serif;
+    }
 
-		.navbar-default .navbar-brand {
-			color: #00467F;
-			font-family: 'Lobster', cursive;
-			font-size:25px;
-		}
+    h1, h2, h3, h4, nav {
+      font-family: 'Lato', sans-serif;
+    }
 
-		.navbar-default {
-			border-bottom:3px solid #00467F;
-		}
+    .navbar-default .navbar-brand {
+      color: #00467F;
+      font-family: 'Lobster', cursive;
+      font-size:25px;
+    }
 
-		.navbar-default .navbar-nav>li>a {
-			color: #00467F;
-		}
+    .navbar-default {
+      border-bottom:3px solid #00467F;
+    }
 
-		.logo-login {
-			color: #00467F;
-			font-family: 'Lobster', cursive;
-			text-align:center;
-			font-size:15rem;
-		}
-
-		.col-md-3, .col-md-6 {
-				/*border-right: 1px solid #cfcfcf;*/
-		}
-
-		.participants {
-			padding-left:5%;
-		}
-
-		.participants > .row {
-			margin-top:7%;
-		}
-
-		.participant {
-			width:90%;
-		}
-
-		.animal-localization > p > img {
-			width: 10%;
-		}
-
-		.animal-profile-picture > img {
-			width: 70%;
-		}
-
-		.timeline {
-			height: 60%;
-			overflow: scroll; overflow-x:hidden;
-			margin-bottom:10%;
-		}
-
-		.timeline-event > .img-circle {
-			width:10%;
-		}
-
+    .navbar-default .navbar-nav>li>a {
+      color: #00467F;
+    }
+	
 	</style>
 </head>
 <body ng-app="adote">
@@ -122,15 +85,12 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Link</a></li>
+						<li><a href="#">Home</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Nome do usuário <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Separated link</a></li>
+								<li><a href="#">Login</a></li>
+								<li><a href="#">Logout</a></li>
 							</ul>
 						</li>
 						</ul>
