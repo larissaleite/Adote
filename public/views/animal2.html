@@ -1,43 +1,12 @@
 
   <style>
+
     body {
-      padding-top:7%;
-      background-color:#E1E8FF;
-      font-family: 'Lato', sans-serif;
+      font-family: 'Roboto Slab', serif;
     }
 
     h1, h2, h3, h4, nav {
-      font-family: 'Lato', sans-serif;
-    }
-
-    .navbar-default .navbar-brand {
-      color: #00467F;
-      font-family: 'Lobster', cursive;
-      font-size:25px;
-    }
-
-    .navbar-default {
-      border-bottom:3px solid #00467F;
-    }
-
-    .navbar-default .navbar-nav>li>a {
-      color: #00467F;
-    }
-
-    .col-md-3, .col-md-6 {
-        /*border-right: 1px solid #cfcfcf;*/
-    }
-
-    .participants {
-      padding-left:5%;
-    }
-
-    .participants > .row {
-      margin-top:7%;
-    }
-
-    .participant {
-      width:90%;
+      font-family: 'Roboto Slab', serif;
     }
 
     .animal-localization > p > img {
@@ -48,10 +17,39 @@
       width: 70%;
     }
 
+    .thumbnail {
+      background-color: #f8f8f8;
+    }
+
+    .participants {
+      padding: 7%;
+    }
+
+    .participants > .row {
+      margin-top:7%;
+    }
+
+    .participant {
+      width:80%;
+    }
+
+    .main-content {
+      margin-left: 3%;
+    }
+
     .timeline {
-      height: 60%;
-      overflow: scroll; overflow-x:hidden;
+      /*height: 60%;
+      overflow: scroll; overflow-x:hidden;*/
       margin-bottom:10%;
+
+      padding: 2%;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      -webkit-box-shadow: -5px -5px 15px 0px rgba(0,70,127,1);
+      -moz-box-shadow: -5px -5px 15px 0px rgba(0,70,127,1);
+      box-shadow: -5px -5px 15px 0px rgba(0,0,0,0.25), 5px 5px 15px 0px rgba(0,0,0,0.25);
+
+      background-color: #f8f8f8;
     }
 
     .border-divider {
@@ -60,7 +58,7 @@
     }
 
     .comentarios {
-      height: 60%;
+      height: 70%;
       overflow: scroll; overflow-x:hidden;
     }
 
@@ -69,45 +67,13 @@
     }
 
     .timeline-event > .img-circle {
-      width:10%;
+      width:8%;
     }
 
   </style>
-
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Adote</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nome do usuário <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-        </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
       <!-- Animal pictures -->
       <div class="col-xs-6 col-md-3">
+          
           <div class="thumbnail">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvpzklquo6tl4Uy1aaFe1xkVPpG6YJ0caHwhGsxvyxNXIWGeAAgg" alt="...">
             <div class="caption">
@@ -125,15 +91,49 @@
               <a href="#"><span class="glyphicon glyphicon-plus"></span> Mais fotos</a>
             </div>
           </div>
+
+          <div class="row participants">
+            <h4>Usuários participantes</h4>
+            <div class="row">
+              <div class="col-xs-6 col-sm-3">
+                <img src="http://files.softicons.com/download/internet-icons/user-icons-by-2shi/png/256/user5.png" class="img-circle participant">
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <img src="http://b.dryicons.com/images/icon_sets/shine_icon_set/png/256x256/female_business_user.png" class="img-circle participant">
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <img src="http://www.fancyicons.com/download/?id=1878&t=png&s=256" class="img-circle participant">
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <img src="http://www.selcuk.edu.tr/dosyalar/images/070/bayan%20icon.png" class="img-circle participant">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6 col-sm-3">
+                <img src="http://www.fancyicons.com/download/?id=1878&t=png&s=256" class="img-circle participant">
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <img src="http://www.selcuk.edu.tr/dosyalar/images/070/bayan%20icon.png" class="img-circle participant">
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <img src="http://www.fancyicons.com/download/?id=1878&t=png&s=256" class="img-circle participant">
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <img src="http://b.dryicons.com/images/icon_sets/shine_icon_set/png/256x256/female_business_user.png" class="img-circle participant">
+              </div>
+            </div>
+          </div>
+
       </div>
 
       <!-- Animal info and timeline -->
-      <div class="col-xs-6 col-md-6">
-        <h3>Timeline</h3>
+      <div class="col-xs-12 col-sm-6 col-lg-8 main-content">
         
         <div class="timeline">
 
-          <hr>
+          <!--<h3>Timeline</h3>-->
+
 
           <div class="timeline-event timeline-event-left">
             <img src="http://upload.wikimedia.org/wikipedia/commons/4/49/Gnome-Wikipedia-user-female.png" class="img-circle pull-left">
@@ -248,7 +248,7 @@
       </div>
 
       <!-- Participants -->
-      <div class="col-xs-6 col-md-3 participants">
+   <!--   <div class="col-xs-6 col-md-3 participants">
         <h4>Usuários participantes</h4>
         <div class="row">
           <div class="col-xs-6 col-sm-3">
@@ -280,4 +280,4 @@
           </div>
         </div>
 
-      </div>
+      </div>-->
