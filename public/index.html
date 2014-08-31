@@ -21,6 +21,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -48,11 +49,11 @@
       /*background-color:#E1E8FF;*/
       background-color: #abc6d9;
 
-      font-family: 'Lato', sans-serif;
+      font-family: 'Raleway', serif;
     }
 
     h1, h2, h3, h4, nav {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Raleway', serif;
     }
 
     .navbar-default .navbar-brand {
@@ -70,8 +71,8 @@
     }
 
     .search-input {
-    	width: 25%;
-    	margin-left: 45%;
+    	/*width: 25%;
+    	margin-left: 45%;*/
     }
 	
 	</style>
@@ -80,7 +81,7 @@
 	<div class="container">
 
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container-fluid">
+			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -104,11 +105,12 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/">Home</a></li>
 						<li><a href="/cadastro">Encontrei um bichinho</a></li>
+						<li><a href="#">Busca detalhada</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Nome do usuário <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="#">Login</a></li>
-								<li><a href="#">Logout</a></li>
+								<li><a href="/logout">Logout</a></li>
 							</ul>
 						</li>
 						</ul>

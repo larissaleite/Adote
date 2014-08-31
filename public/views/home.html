@@ -1,16 +1,147 @@
+	<style type="text/css">
 
-	<!-- FACEBOOK INFORMATION -->
-	<div class="col-sm-6">
-		<div class="well">
-			<h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+		.last-events {
+	      	/*height: 60%;
+	      	overflow: scroll; overflow-x:hidden;*/
+		    margin-bottom:10%;
 
-				<p>
-					<strong>id</strong>: <%= user.facebook.id %><br>
-					<strong>token</strong>: <%= user.facebook.token %><br>
-					<strong>email</strong>: <%= user.facebook.email %><br>
-					<strong>name</strong>: <%= user.facebook.name %>
-				</p>
+		    padding: 2%;
+		    border: 1px solid #eee;
+		    border-radius: 5px;
+	      	/* -webkit-box-shadow: -3px -3px 15px 0px rgba(0,70,127,1), 3px 3px 15px 0px rgba(0,0,0,0.25);
+	      	-moz-box-shadow: -3px -3px 15px 0px rgba(0,70,127,1), 3px 3px 15px 0px rgba(0,0,0,0.25);
+	      	box-shadow: -3px -3px 15px 0px rgba(0,0,0,0.25), 3px 3px 15px 0px rgba(0,0,0,0.25);
+	      	*/
+	      	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25), 0px -2px 2px 0px rgba(0,0,0,0.25);
+	      	background-color: #f8f8f8;
+	    }
 
-				
+	    .profile-avatar {
+	    	width: 85%;
+	    	margin-bottom: 10%;
+	    }
+
+	    .event > .img-circle {
+      		width:7%;
+    	}
+
+    	#profile-link {
+    		display: inline;
+    		vertical-align: super;
+    	}
+
+    	.fa-facebook-square {
+    		margin-left: 5%;
+    		margin-right: 5%;
+    	}
+
+    	.animals-display {
+    		margin-bottom: 10%;
+    	}
+
+	</style>
+
+	<script type="text/javascript">
+		
+
+	</script>
+	
+
+	<div class="col-xs-6 col-md-3">
+		<img src="http://kaynou.files.wordpress.com/2011/05/grammargirlavatar.jpg" class="img-circle profile-avatar">
+		<br>
+		<a href=""><i class="fa fa-facebook-square fa-2x"></i><h4 id="profile-link">Maria Joaquina</h4></a>
+	</div>
+
+	<div class="col-xs-12 col-sm-6 col-lg-8">
+		<div class="last-events">
+			
+			<div class="event event-left">
+	            <img src="http://4.bp.blogspot.com/_kgJ7oLMnD4c/TCmb-s22B1I/AAAAAAAAAZ4/7QqnGFSRKck/s1600/pu.png" class="img-circle pull-left">
+	            <div class="col-md-10 event-text"><a href="#">Texto falando sobre o evento realizado pelo o usuário</a></div>
+	            <button class="btn btn-default pull-right">Clear</button>
+	            <div style="clear:both"></div>
+          	</div>
+
+          	<hr>
+
+          	<div class="event event-left">
+	            <img src="http://img2.wikia.nocookie.net/__cb20121101165134/farmville/images/d/d6/Police_Puppy-icon.png" class="img-circle pull-left">
+	            <div class="col-md-10 event-text"><a href="#">Texto falando sobre o evento realizado pelo o usuário</a></div>
+	            <button class="btn btn-default pull-right">Clear</button>
+	            <div style="clear:both"></div>
+          	</div>
+
+          	<hr>
+
+          	<div class="event event-left">
+	            <img src="http://www.jouer-a-farmville.fr/images/pets/golden_retriever_cream.png" class="img-circle pull-left">
+	            <div class="col-md-10 event-text"><a href="#">Texto falando sobre o evento realizado pelo o usuário</a></div>
+	            <button class="btn btn-default pull-right">Clear</button>
+	            <div style="clear:both"></div>
+          	</div>
+
+          	<hr>
+
+          	<div class="event event-left">
+	            <img src="http://www.fontsaddict.com/images/icons/png/8.png" class="img-circle pull-left">
+	            <div class="col-md-10 event-text"><a href="#">Texto falando sobre o evento realizado pelo o usuário</a></div>
+	            <button class="btn btn-default pull-right">Clear</button>
+	            <div style="clear:both"></div>
+          	</div>
+
+          	<hr>
+
+          	<div class="event event-left">
+	            <img src="http://iconbug.com/data/af/256/11ec71f4b5adce762099c3c0e7d5489b.png" class="img-circle pull-left">
+	            <div class="col-md-10 event-text"><a href="#">Texto falando sobre o evento realizado pelo o usuário</a></div>
+	            <button class="btn btn-default pull-right">Clear</button>
+	            <div style="clear:both"></div>
+          	</div>
+
+          	<hr>
+
+          	<div class="event event-left">
+	            <img src="https://cdn1.iconfinder.com/data/icons/SUPERVISTA/animals/png/400/swallow_bird.png" class="img-circle pull-left">
+	            <div class="col-md-10 event-text"><a href="#">Texto falando sobre o evento realizado pelo o usuário</a></div>
+	            <button class="btn btn-default pull-right">Clear</button>
+	            <div style="clear:both"></div>
+          	</div>
+
 		</div>
+
+		<div class="animals-display">
+			<div class="panel-group" id="accordion">
+			  <div class="panel panel-default">
+			    <div class="panel-heading">
+			      <h4 class="panel-title">
+			        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+			          Animais que acompanho
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseOne" class="panel-collapse collapse in">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default">
+			    <div class="panel-heading">
+			      <h4 class="panel-title">
+			        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+			          Animais que cadastrei
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+		</div>
+
 	</div>
