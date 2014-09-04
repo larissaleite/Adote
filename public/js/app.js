@@ -19,6 +19,10 @@ angular.module('adote', ['ngCookies', 'ngResource', 'ngRoute', 'mgcrea.ngStrap']
         templateUrl: 'views/cadastro.html',
         controller: 'CadastroCtrl'
       })
+      .when('/busca', {
+        templateUrl: 'views/busca.html',
+        controller: 'BuscaCtrl'
+      })
   	  .otherwise({
   	    redirectTo: '/'
   	  });
