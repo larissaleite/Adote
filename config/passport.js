@@ -41,6 +41,8 @@ module.exports = function(passport) {
 		// asynchronous
 		process.nextTick(function() {
 
+			console.log("profile " + profile.id);
+
 			// find the user in the database based on their facebook id
 	        User.findOne({ 'facebook.id' : profile.id }, function(err, user) {
 
@@ -51,6 +53,7 @@ module.exports = function(passport) {
 
 				// if the user is found, then log them in
 	            if (user) {
+	            	console.log(user.name + " " + user.email);
 	                return done(null, user); // user found, return that user
 	            } else {
 	                // if there is no user found with that facebook id, create them

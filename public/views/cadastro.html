@@ -17,25 +17,26 @@
 
       <div class="row">
         <div class="col-xs-6">
-          <label>Nome/apelido</label><input type="text" class="form-control" placeholder="Nome/apelido"/>
-          <label>Tipo</label><input type="text" class="form-control" placeholder="Tipo"/>
+          <label>Nome/apelido</label><input type="text" class="form-control" placeholder="Nome/apelido" ng-model="nome" />
+          <label>Tipo</label><input type="text" class="form-control" placeholder="Tipo" ng-model="tipo" />
         </div>
         <div class="col-xs-6">
-          <label>Localização</label><input type="text" class="form-control" placeholder="Localização"/>
-          <label>Situação</label><input type="text" class="form-control" placeholder="Situação"/>
+          <label>Localização</label><input type="text" class="form-control" placeholder="Localização" ng-model="localizacao" />
+          <label>Situação</label><input type="text" class="form-control" placeholder="Situação" ng-model="situacao" />
         </div>
       </div>
 
-      <label>Descrição</label><textarea cols="20" rows="5" class="form-control"></textarea>
+      <label>Descrição</label><textarea cols="20" rows="5" class="form-control" ng-model="descricao"></textarea>
 
       <!--<input type="file" class="form-control" placeholder="Upload" />-->
 
       <div class="row">
         <div class="col-xs-6">
+          <button class="btn btn-default form-control" ng-click="getAll()">Teste</button>
         </div>
 
         <div class="col-xs-6">
-          <button class="btn btn-default form-control">Cadastrar</button>
+          <button class="btn btn-default form-control" ng-click="cadastrar()">Cadastrar</button>
         </div>
       </div>  
 

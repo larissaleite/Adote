@@ -122,7 +122,7 @@
         <div class="form-group" style="display:inline;">
           <div class="input-group search-input">
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-					<input type="text" class="form-control" ng-model="selectedState" ng-options="state for state in states" placeholder="Encontre bichinhos" bs-typeahead>
+					<input type="text" class="form-control" ng-model="selectedAnimal" ng-options="animal.nome for animal in animals" placeholder="Encontre bichinhos" bs-typeahead>
           </div>
         </div>
       </form>

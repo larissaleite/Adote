@@ -1,3 +1,5 @@
+var Animal = require('./models/animal');
+
 module.exports = function(app, passport) {
 
 	require('../config/passport')(passport); // pass passport for configuration
@@ -5,8 +7,59 @@ module.exports = function(app, passport) {
 	app.use(passport.initialize());
 	app.use(passport.session());
 
-	app.get('*', function(req, res) {
-			res.sendfile('./public/index.html');
+	app.get('/api/animals', function(req, res, next) {
+		console.log("GET - api/animals");
+
+		Animal.find({}, function(err, animals) {
+			if (err) {
+				console.log("erro");
+				res.send(err);
+			}
+			if (!animals.length) {
+				console.log("nao encontrou animais");
+				res.send("nao encontrou");
+			} else {
+				console.log("animais encontrados ");
+				animals.forEach(function (animal) {
+					console.log(JSON.stringify(animal));
+				});
+				res.json(animals);
+			}
+		});
+	});
+
+	app.get('/api/animals/:id', function(req, res, next) {
+
+	});
+
+	app.get('/api/animals/:userid', function(req, res, next) {
+
+	});
+
+	app.post('/api/animal', function(req, res, next) {
+		console.log("POST - api/animal");
+
+		var animal = new Animal({
+			nome: req.body.nome,
+			tipo: req.body.tipo,
+			situacao: req.body.situacao,
+			localizacao: req.body.localizacao,
+			descricao: req.body.descricao,
+			usuario_nome: "Maria Joaquina",
+			eventos: {
+				usuario_nome: "Maria Joaquina",
+				texto: "Registrado por Maria Joaquina",
+				data: req.body.date,
+				categoria: ""
+			}
+		});
+
+		animal.save(function(err) {
+			if (err)
+				res.send(err);
+
+			res.send("success");
+		});	
 	});
 
 	// =====================================
@@ -19,13 +72,24 @@ module.exports = function(app, passport) {
 	app.get('/auth/facebook/callback',
 		passport.authenticate('facebook', {
 			successRedirect : '/home',
-			failureRedirect : '/'
+			failureRedirect : '/login'
 		}));
 
 	// route for logging out
 	app.get('/logout', function(req, res) {
 		req.logout();
-		res.redirect('/');
+		res.redirect('/login');
+	});
+
+	app.get('*', function(req, res) {
+		res.sendfile('./public/index.html');
 	});
 	
+}
+
+function isAuthenticated(req, res, next) {
+	if (req.user.authenticated)
+		return next();
+
+	res.redirect('/');
 }
