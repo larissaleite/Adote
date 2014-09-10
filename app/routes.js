@@ -16,10 +16,10 @@ module.exports = function(app, passport) {
 				res.send(err);
 			}
 			if (!animals.length) {
-				console.log("nao encontrou animais");
+				//console.log("nao encontrou animais");
 				res.send("nao encontrou");
 			} else {
-				console.log("animais encontrados ");
+				//console.log("animais encontrados ");
 				animals.forEach(function (animal) {
 					console.log(JSON.stringify(animal));
 				});
@@ -29,15 +29,15 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/api/animal/:id', function(req, res, next) {
-		console.log("GET - api/animal/id "+req.params.id);
+		console.log("GET - api/animal/id = "+req.query.id);
 
-		Animal.findById(req.params.id, function(err, animal) {
+		Animal.findById(req.query.id, function(err, animal) {
 			if (err) {
 				console.log("erro");
 				res.send(err);
+			} else {
+				res.json(animal);
 			}
-
-			res.json(animal);
 		});
 	});
 
