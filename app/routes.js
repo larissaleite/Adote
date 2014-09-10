@@ -28,8 +28,17 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	app.get('/api/animals/:id', function(req, res, next) {
+	app.get('/api/animal/:id', function(req, res, next) {
+		console.log("GET - api/animal/id "+req.params.id);
 
+		Animal.findById(req.params.id, function(err, animal) {
+			if (err) {
+				console.log("erro");
+				res.send(err);
+			}
+
+			res.json(animal);
+		});
 	});
 
 	app.get('/api/animals/:userid', function(req, res, next) {

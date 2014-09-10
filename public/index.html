@@ -34,7 +34,7 @@
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.js"></script>
   <script src="https://oss.maxcdn.com/angular.strap/2.0.0/angular-strap.min.js"></script>
-<script src="https://oss.maxcdn.com/angular.strap/2.0.0/angular-strap.tpl.min.js"></script>
+  <script src="https://oss.maxcdn.com/angular.strap/2.0.0/angular-strap.tpl.min.js"></script>
 
   <script src="js/app.js"></script>
   <script src="js/controllers/home.js"></script>
@@ -42,6 +42,7 @@
   <script src="js/controllers/login.js"></script>
   <script src="js/controllers/registration.js"></script>
   <script src="js/controllers/busca.js"></script>
+  <script src="js/controllers/detail.js"></script>
 
 	<style>
 
@@ -122,7 +123,7 @@
         <div class="form-group" style="display:inline;">
           <div class="input-group search-input">
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-					<input type="text" class="form-control" ng-model="selectedAnimal" ng-options="animal.nome for animal in animals" placeholder="Encontre bichinhos" bs-typeahead>
+				<input type="text" class="form-control" ng-model="selectedAnimal" ng-options="animal.nome + ' ' + animal.tipo for animal in animals" placeholder="Encontre bichinhos" bs-typeahead>
           </div>
         </div>
       </form>

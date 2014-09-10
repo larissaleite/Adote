@@ -7,13 +7,15 @@ angular.module('adote')
   	var descricao = $scope.descricao;
   	var localizacao = $scope.localizacao;
   	var tipo = $scope.tipo;
+  	var date = new Date();
 
   	var animal = {
   		nome: nome,
   		situacao: situacao,
   		descricao: descricao,
   		localizacao: localizacao,
-  		tipo: tipo
+  		tipo: tipo,
+  		date: date
   	}
 
   	$http.post('/api/animal', animal)

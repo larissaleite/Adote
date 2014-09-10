@@ -1,5 +1,4 @@
-var app = angular.module('adote');
-
-app.controller('HomeCtrl', function($scope) {
+angular.module('adote')
+	.controller('HomeCtrl', function($scope) {
 
 });
