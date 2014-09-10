@@ -30,7 +30,7 @@ angular.module('adote', ['ngCookies', 'ngResource', 'ngRoute', 'mgcrea.ngStrap']
   	    redirectTo: '/'
   	  });
 
-      $locationProvider.html5Mode(true);
+      //$locationProvider.html5Mode(true);
 
   })
 
@@ -57,10 +57,9 @@ angular.module('adote', ['ngCookies', 'ngResource', 'ngRoute', 'mgcrea.ngStrap']
     $scope.$on('$typeahead.select', function() {
       $scope.selectedValue = $scope.selectedAnimal;
       console.log('Value selected '+ $scope.selectedValue.nome);
-      $scope.$digest();
+      //$scope.$digest();
 
-      console.log($location.path());
-
+      //console.log($location.path());
       window.location.href = '/#/animal/'+$scope.selectedValue.nome;
 
     });
