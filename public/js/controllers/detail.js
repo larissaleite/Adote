@@ -1,22 +1,40 @@
 angular.module('adote')
   .controller('DetailCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
-  	
-  	//$scope.nome = $routeParams.nome;
-  	console.log($routeParams.id);
 
-  	$scope.animal = [];
+  	$scope.animal;
   	$scope.eventos = [];
   	$scope.comentarios = [];
 
   	$http({url: '/api/animal/:id', method: 'GET', params : { id: $routeParams.id } })
       .success(function(response) {
+
+      	/* nao funciona com o push  ??? */
+        $scope.animal = response;
         
-        $scope.animal.push(response);
-        $scope.eventos.push(response.eventos);
-        $scope.comentarios.push(response.comentarios);
+        if (response.eventos != undefined)
+        	$scope.eventos.push(response.eventos);
+        
+        if (response.comentarios != undefined)
+        	$scope.comentarios.push(response.comentarios);
 
       }).error(function(response){
          console.log("erro "+response);
       });
+
+      $scope.comentar = function() {
+      	//console.log($scope.texto);
+      	//console.log(new Date());
+      	var date = new Date();
+
+      	var comentario = {
+      		usuario: "Maria Joaquina",
+      		data: date,
+      		texto: $scope.texto
+      	}
+
+      	$scope.comentarios.push(comentario);
+
+      	/* fazer a nível local mas só colocar em $scope.comentarios depois que voltar a atualização SEM ERRO */
+      }
 
 }]);

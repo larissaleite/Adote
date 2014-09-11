@@ -59,7 +59,7 @@
     }
 
     .comentarios {
-      height: 70%;
+      max-height: 70%;
       overflow: scroll; overflow-x:hidden;
     }
 
@@ -67,8 +67,26 @@
       margin-bottom: 10%;
     }
 
-    .timeline-event > .img-circle {
+    .comentarios-vazio {
+    	padding: 3% 0%;
+		text-align: center;
+		color: #a8a8a8;
+    }
+
+    .timeline-event > .img-circle, .comentario > .img-circle {
       width:8%;
+    }
+
+    .evento-data {
+    	color: #afafaf;
+    }
+
+    .comentario {
+    	margin-bottom: 5%;
+    }
+
+    .comentario-data {
+    	color: #a8a8a8;
     }
 
   </style>
@@ -133,13 +151,14 @@
         
         <div class="timeline">
 
-        	<hr>
-
         	<div class="timeline-event timeline-event-left" ng-repeat="evento in eventos">
 	            <img src="http://upload.wikimedia.org/wikipedia/commons/4/49/Gnome-Wikipedia-user-female.png" class="img-circle pull-left">
-	            <p>{{ evento.texto }} - {{ evento.data }}</p>
+	            <p>{{ evento.texto }}</p>
+	            <p class="evento-data">Em {{ evento.data }}</p>
 	            <div style="clear:both"></div>
           	</div>
+
+          	<hr>
 
         </div>
 
@@ -148,21 +167,29 @@
         <h3>Comentários</h3>
 
         <div class="comentarios">
+        	
+        	<div class="comentarios-vazio" ng-show="comentarios.length == 0">
+				<p> Nenhum comentário </p>
+	      	</div>
+          	
+          	<div ng-show="comentarios.length > 0" ng-repeat="comentario in comentarios">
+          		
+          		<hr>
 
-          <hr>
+	        	<div class="comentario comentario-left">
+	        		<img src="http://upload.wikimedia.org/wikipedia/commons/4/49/Gnome-Wikipedia-user-female.png" class="img-circle pull-left">
+	            	<p>{{ comentario.texto }}</p>
+	            	<p class="comentario-data">Em {{ comentario.data }}</p>
+	            	<div style="clear:both"></div>
+	        	</div>
 
-          <div class="timeline-event timeline-event-left" ng-repeat="comentario in comentarios">
-            <img src="http://upload.wikimedia.org/wikipedia/commons/4/49/Gnome-Wikipedia-user-female.png" class="img-circle pull-left">
-            <p>{{ comentario.texto }} - {{ comentario.data }}</p>
-            <div style="clear:both"></div>
-          </div>
-
+	  		</div>
         </div>
 
         <div class="comentario-area">
-          <textarea cols="15" rows="3" class="form-control"></textarea>
+          <textarea cols="15" rows="3" class="form-control" ng-model="texto"></textarea>
           <br>
-          <button class="btn btn-default">Comentar</button>
+          <button class="btn btn-default" ng-click="comentar()">Comentar</button>
         </div>
 
       </div>
