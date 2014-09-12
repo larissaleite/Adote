@@ -1,4 +1,4 @@
-angular.module('adote', ['ngCookies', 'ngResource', 'ngRoute', 'mgcrea.ngStrap'])
+angular.module('adote', ['ngCookies', 'ngResource', 'ngRoute', 'mgcrea.ngStrap', 'flow'])
   .config(function($locationProvider, $routeProvider) {
 
     $routeProvider
@@ -48,7 +48,7 @@ angular.module('adote', ['ngCookies', 'ngResource', 'ngRoute', 'mgcrea.ngStrap']
 
     $scope.$on('$typeahead.select', function() {
       $scope.selectedValue = $scope.selectedAnimal;
-
+      $scope.selectedAnimal = "";
       window.location.href = '/#/animal/'+$scope.selectedValue._id;
 
     });

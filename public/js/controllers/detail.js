@@ -24,6 +24,7 @@ angular.module('adote')
       $scope.comentar = function() {
       	//console.log($scope.texto);
       	//console.log(new Date());
+     	/* check if text is not empty */
       	var date = new Date();
 
       	var comentario = {
@@ -33,6 +34,7 @@ angular.module('adote')
       	}
 
       	$scope.comentarios.push(comentario);
+      	$scope.texto = "";
 
       	/* fazer a nível local mas só colocar em $scope.comentarios depois que voltar a atualização SEM ERRO */
       }

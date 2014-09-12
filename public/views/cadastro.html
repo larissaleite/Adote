@@ -4,6 +4,17 @@
       margin-bottom: 3%;
     }
 
+    .drop {
+      padding: 15px;
+      border: 2px #f1f1f1 dashed;
+      border-radius: 5px;
+      line-height: 34px;
+    }
+
+    .uploaded-image, .progress {
+      width: 25%;
+    }
+
   </style>
 
   <div class="col-xs-6 col-md-3">
@@ -21,7 +32,8 @@
           <label>Tipo</label><input type="text" class="form-control" placeholder="Tipo" ng-model="tipo" />
         </div>
         <div class="col-xs-6">
-          <label>Localização</label><input type="text" class="form-control" placeholder="Localização" ng-model="localizacao" />
+          <label>Localização</label><!--<input type="text" class="form-control" placeholder="Localização" ng-model="localizacao" />-->
+          <google-places location=location></google-places>
           <label>Situação</label><input type="text" class="form-control" placeholder="Situação" ng-model="situacao" />
         </div>
       </div>
@@ -29,12 +41,52 @@
       <label>Descrição</label><textarea cols="20" rows="5" class="form-control" ng-model="descricao"></textarea>
 
       <!--<input type="file" class="form-control" placeholder="Upload" />-->
+      <div class="row">
+        <div class="col-md-12">
+
+          <h3>Envio de imagens</h3>
+            <div flow-init
+                 flow-files-submitted="$flow.upload()"
+                 flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+              <div class="drop" flow-drop ng-class="dropClass">
+                <span class="btn btn-default" flow-btn>Selecione uma imagem</span>
+                Ou arraste as imagens para esta área
+              </div>
+
+              <br/>
+
+              <div>
+                <div ng-repeat="file in $flow.files" class="gallery-box">
+                  <span class="title">{{file.name}}</span>
+                  <div class="thumbnail uploaded-image" ng-show="$flow.files.length">
+                    <img flow-img="file" />
+                  </div>
+                  <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
+                    <div class="progress-bar" role="progressbar"
+                         aria-valuenow="{{file.progress() * 100}}"
+                         aria-valuemin="0"
+                         aria-valuemax="100"
+                         ng-style="{width: (file.progress() * 100) + '%'}">
+                      <span class="sr-only">{{file.progress()}}% Enviado</span>
+                    </div>
+                  </div>
+                  <div class="btn-group">
+                    <a class="btn btn-xs btn-danger" ng-click="file.cancel()">
+                      Remover
+                    </a>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+      <hr>
 
       <div class="row">
-        <div class="col-xs-6">
-        </div>
-
-        <div class="col-xs-6">
+        <div class="col-xs-12">
           <button class="btn btn-default form-control" ng-click="cadastrar()">Cadastrar</button>
         </div>
       </div>  
