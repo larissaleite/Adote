@@ -21,6 +21,28 @@ angular.module('adote')
          console.log("erro "+response);
       });
 
+      /* include location name above map */ 
+
+      	var map;
+    
+        var mapOptions = {
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        
+        map = new google.maps.Map(document.getElementById('local'), mapOptions);
+            
+        var geolocate = new google.maps.LatLng(-5.825141, -35.200090999999986);
+        
+        var marker = new google.maps.Marker({
+       		position: geolocate,
+        	map: map
+    	});
+        
+        map.setCenter(geolocate);
+        
+        
+
       $scope.comentar = function() {
       	//console.log($scope.texto);
       	//console.log(new Date());
