@@ -10,6 +10,8 @@ module.exports = function(app, passport) {
 	app.get('/api/animals', function(req, res, next) {
 		console.log("GET - api/animals");
 
+		//Animal.remove({"nome":"Pluto"}, function(){});
+
 		Animal.find({}, function(err, animals) {
 			if (err) {
 				console.log("erro");
@@ -22,6 +24,7 @@ module.exports = function(app, passport) {
 				//console.log("animais encontrados ");
 				animals.forEach(function (animal) {
 					console.log(JSON.stringify(animal));
+					console.log("--------- TAGS "+animal.tags);
 				});
 				res.json(animals);
 			}
@@ -48,19 +51,17 @@ module.exports = function(app, passport) {
 	app.post('/api/animal', function(req, res, next) {
 		console.log("POST - api/animal");
 
+		console.log(req.body.tags);
+		//console.log(req.body.localizacoes);
+
 		var animal = new Animal({
 			nome: req.body.nome,
 			tipo: req.body.tipo,
-			situacao: req.body.situacao,
-			localizacao: req.body.localizacao,
+			tags: req.body.tags,
+			localizacoes: req.body.localizacoes,
 			descricao: req.body.descricao,
 			usuario_nome: "Maria Joaquina",
-			eventos: {
-				usuario_nome: "Maria Joaquina",
-				texto: "Registrado por Maria Joaquina",
-				data: req.body.date,
-				categoria: ""
-			}
+			eventos: req.body.eventos
 		});
 
 		animal.save(function(err) {

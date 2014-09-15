@@ -5,21 +5,28 @@ var mongoose = require('mongoose');
 var animalSchema = mongoose.Schema({
 	nome: String,
 	tipo: String,
-	situacao: String,
-	localizacao: String,
+	localizacoes: [{
+		local: String,
+		latitude: Number,
+		longitude: Number,
+		data: Date
+	}],
+	tags: [{
+		text: String
+	}],
 	descricao: String,
 	usuario_nome: String,
-	eventos: {
+	eventos: [{
 		usuario_nome: String,
 		texto: String,
 		data: Date,
 		categoria: String
-	},
-	comentarios: {
+	}],
+	comentarios: [{
 		usuario_nome: String,
 		texto: String,
 		data: Date
-	}
+	}]
 
 });
 

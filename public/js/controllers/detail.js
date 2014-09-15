@@ -2,8 +2,9 @@ angular.module('adote')
   .controller('DetailCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 
   	$scope.animal;
-  	$scope.eventos = [];
-  	$scope.comentarios = [];
+  	$scope.eventos;
+  	$scope.comentarios;
+    $scope.localizacao;
 
   	$http({url: '/api/animal/:id', method: 'GET', params : { id: $routeParams.id } })
       .success(function(response) {
@@ -12,35 +13,37 @@ angular.module('adote')
         $scope.animal = response;
         
         if (response.eventos != undefined)
-        	$scope.eventos.push(response.eventos);
+        	$scope.eventos = response.eventos;
         
         if (response.comentarios != undefined)
-        	$scope.comentarios.push(response.comentarios);
+        	$scope.comentarios = response.comentarios;
+
+        if (response.localizacoes != undefined) {
+          $scope.localizacao = response.localizacoes[response.localizacoes.length-1];
+
+            var map;
+        
+            var mapOptions = {
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            
+            map = new google.maps.Map(document.getElementById('local'), mapOptions);
+                
+            var geolocate = new google.maps.LatLng($scope.localizacao.latitude, $scope.localizacao.longitude);
+            
+            var marker = new google.maps.Marker({
+              position: geolocate,
+              map: map
+            });
+              
+            map.setCenter(geolocate);
+    
+        }
 
       }).error(function(response){
          console.log("erro "+response);
       });
-
-      /* include location name above map */ 
-
-      	var map;
-    
-        var mapOptions = {
-            zoom: 15,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        
-        map = new google.maps.Map(document.getElementById('local'), mapOptions);
-            
-        var geolocate = new google.maps.LatLng(-5.825141, -35.200090999999986);
-        
-        var marker = new google.maps.Marker({
-       		position: geolocate,
-        	map: map
-    	});
-        
-        map.setCenter(geolocate);
-        
         
 
       $scope.comentar = function() {

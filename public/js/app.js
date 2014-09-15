@@ -1,4 +1,4 @@
-angular.module('adote', ['ngCookies', 'ngResource', 'ngRoute', 'mgcrea.ngStrap', 'flow'])
+angular.module('adote', ['ngCookies', 'ngResource', 'ngRoute', 'ngAnimate', 'flow', 'ngTagsInput', 'ngSanitize', 'mgcrea.ngStrap'])
   .config(function($locationProvider, $routeProvider) {
 
     $routeProvider

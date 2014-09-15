@@ -102,14 +102,11 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvpzklquo6tl4Uy1aaFe1xkVPpG6YJ0caHwhGsxvyxNXIWGeAAgg" alt="...">
             <div class="caption">
               <h3>{{ animal.nome }}</h3>
-              <div class="animal-situacao">
-                <p>Situação atual: {{ animal.situacao }}</p>
-              </div>
               <div class="animal-descricao">
                 <p> {{ animal.descricao }} </p>
               </div>
               <div class="animal-localization">
-                <p><img src="http://www.clipartbest.com/cliparts/dTr/ena/dTrenagpc.png" />Onde estou</p><!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3969.1194777053934!2d-35.203243!3d-5.838779!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2ff8b8d7cad35%3A0x6963e8bee25a0372!2sUniversidade+Federal+do+Rio+Grande+do+Norte!5e0!3m2!1spt-BR!2s!4v1408767901606" width="235" height="100" frameborder="0" style="border:0"></iframe>-->
+                <p><img src="http://www.clipartbest.com/cliparts/dTr/ena/dTrenagpc.png" />{{ localizacao.local }}</p>
                 <div id="local"> </div>
               </div>
               <br>
