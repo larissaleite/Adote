@@ -94,6 +94,14 @@
     	height: 100px;
     }
 
+    .main-header {
+      margin-bottom: 5%;
+    }
+
+    .ajudar {
+      float: right;
+    }
+
   </style>
       <!-- Animal pictures -->
       <div class="col-xs-6 col-md-3">
@@ -152,6 +160,18 @@
       <!-- Animal info and timeline -->
       <div class="col-xs-12 col-sm-6 col-lg-8 main-content">
         
+        <div class="main-header">
+          <div class="row">
+            <div class="col-xs-9">
+            </div>
+
+            <div class="col-xs-3">
+              <button class="btn btn-success form-control">Quero ajudar</button>
+            </div>
+
+          </div>
+        </div>
+        
         <div class="timeline">
 
         	<div class="timeline-event timeline-event-left" ng-repeat="evento in eventos">
@@ -161,7 +181,7 @@
 	            <div style="clear:both"></div>
           	</div>
 
-          	<hr>
+          	<hr ng-show="eventos.length > 1">
 
         </div>
 

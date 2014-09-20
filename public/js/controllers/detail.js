@@ -47,18 +47,22 @@ angular.module('adote')
         
 
       $scope.comentar = function() {
-      	//console.log($scope.texto);
-      	//console.log(new Date());
-     	/* check if text is not empty */
-      	var date = new Date();
+        var str = $scope.texto;
+        var trim = str.replace(/^\s+|\s+$/g, '');
+        console.log(trim);
 
-      	var comentario = {
-      		usuario: "Maria Joaquina",
-      		data: date,
-      		texto: $scope.texto
-      	}
+        if(str != null && str) {
+        	var date = new Date();
 
-      	$scope.comentarios.push(comentario);
+        	var comentario = {
+        		usuario: "Maria Joaquina",
+        		data: date,
+        		texto: $scope.texto
+        	}
+
+        	$scope.comentarios.push(comentario);
+        }
+        
       	$scope.texto = "";
 
       	/* fazer a nível local mas só colocar em $scope.comentarios depois que voltar a atualização SEM ERRO */
